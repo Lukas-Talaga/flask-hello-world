@@ -21,14 +21,14 @@ def hello_world():
     return 'Hello World from Lukas Talaga in 3308'
 
 # Tests and verifies PostgreSQL database connection success
-@app.route('db_test')
+@app.route('/db_test')
 def testing():
     conn = psycopg2.connect("postgresql://lukas_talaga_cspb_3308_lab_10_postgresql_user:EVJVGUJi7oBvBRLjnN7km0zZmVBzwrDv@dpg-cvldj32dbo4c73dai8d0-a/lukas_talaga_cspb_3308_lab_10_postgresql") # connects to the PostgreSQL database
     conn.close() # closes the connection
     return "Database Connection Successful" # Displayed on the browser to show confirmation that this function ran and connected to the db
 
 # Creates and returns verification of an example table with Basketball information
-@app.route('db_create')
+@app.route('/db_create')
 def creating():
     conn = psycopg2.connect('postgresql://lukas_talaga_cspb_3308_lab_10_postgresql_user:EVJVGUJi7oBvBRLjnN7km0zZmVBzwrDv@dpg-cvldj32dbo4c73dai8d0-a/lukas_talaga_cspb_3308_lab_10_postgresql')
     cur = conn.cursor() # create a cursor to interact with database data
