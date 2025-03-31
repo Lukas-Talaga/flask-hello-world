@@ -50,7 +50,7 @@ def create_db_table():
 @app.route('/db_insert')
 def insert_into_db():
     conn = psycopg2.connect('postgresql://lukas_talaga_cspb_3308_lab_10_postgresql_user:EVJVGUJi7oBvBRLjnN7km0zZmVBzwrDv@dpg-cvldj32dbo4c73dai8d0-a/lukas_talaga_cspb_3308_lab_10_postgresql') # connects to the PostgreSQL database
-    cur = conn.cusor() # create a cursor to interact with database data
+    cur = conn.cursor() # create a cursor to interact with database data
     # uses SQL to create sample table
     cur.execute('''
         INSERT INTO Basketball (First, Last, City, Name, Number)
